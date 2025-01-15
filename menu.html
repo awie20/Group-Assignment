@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cafe Vibes Website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+  
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <ol class="breadcrumb mb-0">
+                    
+                </ol>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <small>Follow us:</small>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn-lg-square text-primary border-end rounded-0" href="https://www.facebook.com/share/1FbZdS99tq/" target="_blank" class="text-dark mx-2"><i class="fab fa-facebook-f"</a></i>
+					<a class="btn-lg-square text-primary border-end rounded-0" href="https://x.com/applepiiiiee?s=11" target="_blank" class="text-dark mx-2"><i class="fab fa-twitter"></a></i>
+                    <a class="btn-lg-square text-primary pe-0"href="https://www.instagram.com/cafe.vibes10?igsh=Zjd0cHY2MjI2dTh0" target="_blank" class="text-dark mx-2"><i class="fab fa-instagram"></a></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+        <img src="img/logo1.png" alt="Cafe Logo" style="height: 100px;">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto p-4 p-lg-0 text-center">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="menu.html" class="nav-item nav-link">Menu</a>
+            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                <div class="dropdown-menu m-0">
+                    <a href="team.html" class="dropdown-item">Our Team</a>
+                    <a href="reservation.html" class="dropdown-item">Reservation</a>
+                    <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+                </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          
+
+<a href="#" class="shopping" data-bs-toggle="modal" data-bs-target="#cartModal">
+    <img src="img/shopping.png" alt="Cart Icon">
+    <span id="cart-count">0</span></a> 
+        </div>
+		<div class="d-flex justify-content-center mt-3">
+			<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for a product..." class="form-control w-50">
+		</div>
+    </div>   
+</nav>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <ul class="list-group" id="cartItems"></ul>
+                <div class="mt-3">
+                    <h6>Total: <span id="cartTotal">RM0.00</span></h6>
+                </div>
+
+                <div id="paymentOptionsContainer" class="mt-3">
+                    <h6>Select Payment Method:</h6>
+                    <div>
+                        <label>
+                            <input type="radio" name="paymentOption" value="qr" class="me-2"> Pay with QR Code
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="paymentOption" value="banking" class="me-2"> Pay with Online Banking
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3" id="confirmPaymentOption">Confirm Payment Method</button>
+                </div>
+
+                <div id="qrCodeContainer" class="mt-3" style="display: none;">
+                    <h6>Scan to Checkout</h6>
+                    <img id="qrCodeImage" src="img/qr.jpg" alt="QR Code" class="img-fluid">
+                    <div id="paymentProofContainer" class="mt-3">
+                        <h6>Upload Payment Proof</h6>
+                        <input type="file" id="paymentProof" accept="image/*">
+                    </div>
+                </div>
+
+                <div id="bankingFormContainer" class="mt-3" style="display: none;">
+                    <h6>Online Banking Details</h6>
+                    <form id="bankingForm">
+                    </form>
+                </div>
+
+                <div id="checkoutNotification" class="mt-3" style="display: none;">
+                    <p class="alert alert-success">You have successfully completed the checkout!</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="checkoutButton">Proceed to Payment</button>
+                <button type="button" class="btn btn-success" id="finishButton" style="display: none;">Finish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+	
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register for Exclusive Offers</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registrationForm" class="row g-3" action="mailto:msyafiqasnawi@gmail.com" method="post" enctype="text/plain">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailAddress" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Choose a password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3">Our Menu</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Menu</li><br><br><br><br>
+                </ol>
+            </nav>
+			<center><audio controls autoplay>
+  <source src="img/bgsound.mp3" type="audio/mp3">
+</audio></center>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6" style="margin-top: -150px">
+                    <h1 class="text-center">Expresso yourself with every Surrpp</h1>
+                </div>
+            </div>
+			
+			
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu10.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body"> 
+						<h5 class="menu-item">Dalgona Latte</h5>
+						<p class="text-primary font-weight-bold">RM9.9</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Dalgona Latte" 
+						data-price="9.9" 
+						data-img="img/menu10.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu11.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Cappuccino</h5>
+						<p class="text-primary font-weight-bold">RM4.5</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Cappuccino" 
+						data-price="4.5" 
+						data-img="img/menu11.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu12.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Thai Tea Latte</h5>
+						<p class="text-primary font-weight-bold">RM7.2</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Thai Tea Latte" 
+						data-price="7.2" 
+						data-img="img/menu12.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu17.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Iced Americano</h5>
+						<p class="text-primary font-weight-bold">RM6.5</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Iced Americano" 
+						data-price="6.5" 
+						data-img="img/menu17.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/18.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Matcha Latte</h5>
+						<p class="text-primary font-weight-bold">RM7.5</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Matcha Latte" 
+						data-price="7.5" 
+						data-img="img/18.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu19.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Hot Chocolate</h5>
+						<p class="text-primary font-weight-bold">RM6.9</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Hot Chocolate" 
+						data-price="6.9" 
+						data-img="img/menu19.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu20.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Caramel Macchiato</h5>
+						<p class="text-primary font-weight-bold">RM8.9</p>
+						<center>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Caramel Macchiato" 
+						data-price="8.9" 
+						data-img="img/menu20.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu13.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Cinnamon Roll</h5>
+						<p class="text-primary font-weight-bold">RM8</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Cinnamon Roll" 
+						data-price="8" 
+						data-img="img/menu13.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu14.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Cherry Cheese Danish</h5>
+						<p class="text-primary font-weight-bold">RM4.5</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Cherry Cheese Danish" 
+						data-price="4.5" 
+						data-img="img/menu14.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu15.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Chicken Fettucine Alfredo</h5>
+						<p class="text-primary font-weight-bold">RM13</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Chicken Fettucine Alfredo" 
+						data-price="13" 
+						data-img="img/menu15.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu16.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Penne Alla Vodka</h5>
+						<p class="text-primary font-weight-bold">RM12</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Penne Alla Vodka" 
+						data-price="12" 
+						data-img="img/menu16.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 menu-item-card">
+				<div class="card h-100 text-center shadow" style="border-radius: 50%; overflow: hidden;">
+					<div class="card-img-top" style="border-radius: 50%; overflow: hidden;">
+					<img src="img/menu33.jpg" class="img-fluid" alt="Cappuccino" style="object-fit: cover; height: 200px; width: 200px;">
+					</div>
+					<div class="card-body">
+						<h5 class="menu-item">Spaghetti Aglio olio</h5>
+						<p class="text-primary font-weight-bold">RM13.9</p>
+						<button class="add-to-cart btn btn-primary cart-icon bi bi-cart" 
+						data-name="Spaghetti Aglio Olio" 
+						data-price="13.9" 
+						data-img="img/menu33.jpg">
+						Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+
+
+
+           
+
+
+   		<div class="container-fluid bg-dark text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s">
+		<div class="container py-5">
+			<div class="row g-5">
+				<div class="col-lg-3 col-md-6">
+									<h4 class="text-light mb-4">Cafe Address</h4>
+					<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A1 Plaza, Jalan Ipoh - Kampar, Kampung Batu Karang, 31900 Jeram, Perak</p>
+					<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+0192414850</p>
+					<p class="mb-2"><i class="fa fa-envelope me-3"></i>msyafiqasnawi@gmail.com</p>
+					<p class="mb-2"><i class="fa fa-home me-3"></i>Open from: Monday-Saturday</p>
+					<p class="mb-2"><i class="fa fa-clock me-3"></i>10.00 AM - 22.00 PM</p>
+					<div class="d-flex pt-2">
+						<a class="btn-lg-square text-primary border-end rounded-0" href="https://www.facebook.com/share/1FbZdS99tq/" target="_blank" class="text-dark mx-2"><i class="fab fa-facebook-f"</a></i>
+						<a class="btn-lg-square text-primary border-end rounded-0" href="https://x.com/applepiiiiee?s=11" target="_blank" class="text-dark mx-2"><i class="fab fa-twitter"></a></i>
+						<a class="btn-lg-square text-primary pe-0"href="https://www.instagram.com/cafe.vibes10?igsh=Zjd0cHY2MjI2dTh0" target="_blank" class="text-dark mx-2"><i class="fab fa-instagram"></a></i>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+					<h4 class="text-light mb-4 text-center">Quick Links</h4>
+					<div class="d-flex flex-column gap-2 text-center">
+						<a href="about.html" class="btn btn-link">About Us</a>
+						<a href="menu.html" class="btn btn-link">Our Menu</a>
+						<a href="gallery.html" class="btn btn-link">Our Gallery</a>
+						<a href="reservation.html" class="btn btn-link">Make Reservation</a>
+						<a href="contact.html" class="btn btn-link">Contact Us</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                <h4 class="text-light mb-4 text-center">Our Slogan</h4>
+                <div class="d-flex flex-column gap-2 text-center">
+                    <a class="btn btn-link">Brewed To Perfection, Served With Passion</a>
+                    <a class="btn btn-link">A Place For Coffee People</a>
+                    <a class="btn btn-link">Where Every Cup Is A Work Of Art</a>
+                    <a class="btn btn-link">Wake Up And Smell The Coffee Goodness</a>
+                    <a class="btn btn-link">Freshness Is Our Priority</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Photo Gallery</h4>
+                <div class="row g-2 photo-gallery">
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/menu6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+			</div>
+		</div>
+	</div>
+
+<script>
+
+let cart = [];
+const cartItemsContainer = document.getElementById('cartItems');
+const cartTotalElement = document.getElementById('cartTotal');
+const cartCountElement = document.getElementById('cart-count');
+
+
+function updateCartModal() {
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex align-items-center';
+
+        li.innerHTML = `
+            <img src="${item.img}" alt="${item.name}" style="width: 50px; height: 50px; margin-right: 10px; border-radius: 5px;">
+            <div>
+                <h6 class="mb-0">${item.name}</h6>
+                <small>Price: RM${item.price.toFixed(2)} x ${item.quantity}</small>
+            </div>	
+            <span class="ms-auto">RM${(item.price * item.quantity).toFixed(2)}</span>
+            <div class="ms-3">
+                <button class="btn btn-sm btn-secondary" onclick="decreaseQuantity('${item.name}')">-</button>
+                <span class="ms-2">${item.quantity}</span>
+                <button class="btn btn-sm btn-secondary" onclick="increaseQuantity('${item.name}')">+</button>
+            </div>
+			<button class="btn btn-sm btn-danger ms-3" onclick="removeItem('${item.name}')">Remove</button>
+        `;
+
+        cartItemsContainer.appendChild(li);
+        total += item.price * item.quantity;
+    });
+
+    cartTotalElement.textContent = `RM${total.toFixed(2)}`;
+}
+
+	function removeItem(itemName) {
+    cart = cart.filter(cartItem => cartItem.name !== itemName);
+    
+    updateCartStorage();
+    updateCartModal();
+    updateCartCount();
+    
+    alert(`Item "${itemName}" has been removed from the cart.`);
+}
+
+function updateCartCount() {
+    const totalItems = cart.reduce((accum, item) => accum + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
+}
+
+
+function addToCart(item) {
+    const existingItem = cart.find(cartItem => cartItem.name === item.name);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...item, quantity: 1 });
+    }
+	
+	
+    localStorage.setItem('cartItems', JSON.stringify(cart)); {
+
+    updateCartModal();
+    updateCartCount();
+    alert('Item added to cart');
+}
+
+   
+}
+
+
+
+function updateCartStorage() {
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+}
+
+
+function increaseQuantity(itemName) {
+    const item = cart.find(cartItem => cartItem.name === itemName);
+    if (item) {
+        item.quantity += 1;
+        updateCartStorage();
+        updateCartModal();
+        updateCartCount();
+    }
+}
+
+function decreaseQuantity(itemName) {
+    const item = cart.find(cartItem => cartItem.name === itemName);
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        updateCartStorage();
+        updateCartModal();
+        updateCartCount();
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const orderItemsElement = document.getElementById('order-items');
+    let total = 0;
+
+    orderItemsElement.innerHTML = ''; 
+
+    cartItems.forEach(item => {
+        const orderItem = document.createElement('p');
+        orderItem.textContent = `${item.quantity}x ${item.name} - RM${(item.price * item.quantity).toFixed(2)}`;
+        orderItemsElement.appendChild(orderItem);
+        total += item.price * item.quantity;
+    });
+
+    const shippingCost = 10.00;
+    const discount = total >= 100 ? 15.00 : 0.00;
+    const totalWithShipping = total + shippingCost - discount;
+
+    document.getElementById('display-subtotal').textContent = `RM${total.toFixed(2)}`;
+    document.getElementById('display-shipping-cost').textContent = `RM${shippingCost.toFixed(2)}`;
+    document.getElementById('display-discount').textContent = `-RM${discount.toFixed(2)}`;
+    document.getElementById('display-total').textContent = `RM${totalWithShipping.toFixed(2)}`;
+});
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function () {
+        const name = this.dataset.name;
+        const price = parseFloat(this.dataset.price);
+        const img = this.dataset.img;
+
+        addToCart({ name, price, img });
+    });
+});
+
+
+document.getElementById('checkoutButton').addEventListener('click', function () {
+    if (cart.length === 0) {
+        alert('Please add items to your cart before checking out!');
+        return;
+    }
+    console.log('Proceed to payment clicked');
+    document.getElementById('paymentOptionsContainer').style.display = 'block'; 
+});
+
+
+document.getElementById('confirmPaymentOption').addEventListener('click', function () {
+    const selectedOption = document.querySelector('input[name="paymentOption"]:checked');
+
+    if (!selectedOption) {
+        alert('Please select a payment option!');
+        return;
+    }
+
+    const paymentMethod = selectedOption.value;
+
+    if (paymentMethod === 'qr') {
+        
+        document.getElementById('qrCodeContainer').style.display = 'block';
+        document.getElementById('bankingFormContainer').style.display = 'none';
+    } else if (paymentMethod === 'banking') {
+        
+        document.getElementById('qrCodeContainer').style.display = 'none';
+        window.location.href = 'form.html';
+    }
+
+    console.log('Payment option confirmed:', paymentMethod);
+    document.getElementById('paymentOptionsContainer').style.display = 'none';
+});
+
+
+document.getElementById('paymentProof').addEventListener('change', function () {
+    const file = this.files[0];
+
+    if (file) {
+        alert('Payment proof uploaded successfully!');
+        document.getElementById('finishButton').style.display = 'block'; 
+    }
+});
+
+
+document.getElementById('finishButton').addEventListener('click', function () {
+    alert('Thank you for your payment! Your cart has been reset.');
+    resetCart();
+});
+
+
+function resetCart() {
+    cart = []; 
+    updateCartModal(); 
+    updateCartCount(); 
+
+    document.getElementById('paymentOptionsContainer').style.display = 'none';
+    document.getElementById('qrCodeContainer').style.display = 'none';
+    document.getElementById('bankingFormContainer').style.display = 'none';
+    document.getElementById('paymentProof').value = ''; 
+    document.getElementById('finishButton').style.display = 'none'; 
+
+    alert('Your cart has been reset. You can start adding items again!');
+}
+
+    function myFunction() {
+    
+    var input = document.getElementById('mySearch').value.toLowerCase();
+
+    
+    var menuCards = document.querySelectorAll('.menu-item-card');
+
+    
+    if (input === "") {
+      menuCards.forEach(function(card) {
+        card.classList.remove('hidden');
+      });
+    } else {
+      
+      var found = false;
+      for (var i = 0; i < menuCards.length; i++) {
+        
+        var itemName = menuCards[i].querySelector('.menu-item').textContent || menuCards[i].querySelector('.menu-item').innerText;
+
+        
+        if (itemName.toLowerCase().startsWith(input)) {
+          
+          menuCards[i].classList.remove('hidden');
+          found = true;
+        } else {
+          
+          menuCards[i].classList.add('hidden');
+        }
+      }
+
+      
+      if (!found && input.length > 0) {
+        console.log('No results found');
+      }
+    }
+  }
+  
+</script>
+
+
+    
+
+    
+ 
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

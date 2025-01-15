@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cafe Vibes Website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+   
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <ol class="breadcrumb mb-0">  
+                </ol>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <small>Follow us:</small>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn-lg-square text-primary border-end rounded-0" href="https://www.facebook.com/share/1FbZdS99tq/" target="_blank" class="text-dark mx-2"><i class="fab fa-facebook-f"</a></i>
+					<a class="btn-lg-square text-primary border-end rounded-0" href="https://x.com/applepiiiiee?s=11" target="_blank" class="text-dark mx-2"><i class="fab fa-twitter"></a></i>
+                    <a class="btn-lg-square text-primary pe-0"href="https://www.instagram.com/cafe.vibes10?igsh=Zjd0cHY2MjI2dTh0" target="_blank" class="text-dark mx-2"><i class="fab fa-instagram"></a></i>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+        <img src="img/logo1.png" alt="Cafe Logo" style="height: 100px;">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="menu.html" class="nav-item nav-link">Menu</a>
+            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                <div class="dropdown-menu m-0">
+                    <a href="team.html" class="dropdown-item">Our Team</a>
+                    <a href="reservation.html" class="dropdown-item">Reservation</a>
+                    <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+                </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register for Exclusive Offers</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registrationForm" action="mailto:msyafiqasnawi@gmail.com" method="post" enctype="text/plain">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailAddress" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Choose a password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="owl-carousel header-carousel position-relative">
+        <div class="owl-carousel-item position-relative">
+            <video class="img-fluid" autoplay muted loop playsinline>
+                <source src="img/bg.mp4" type="video/mp4">
+            </video>
+            <div class="owl-carousel-inner">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8">
+                            <h1 class="display-1 text-light mb-4 animated slideInDown">Time For Coffee</h1>
+                            <p class="text-light fs-5 mb-4 pb-3">Good Idea Start With Good Coffee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="img/menu26.jpg" alt="">
+            <div class="owl-carousel-inner">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8">
+                            <h1 class="display-1 text-light mb-4 animated slideInDown">Time For Coffee</h1>
+                            <p class="text-light fs-5 mb-4 pb-3">Good Idea Start With Good Coffee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<center><audio controls autoplay>
+  <source src="img/bgsound.mp3" type="audio/mp3">
+</audio></center>
+
+
+    
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row img-twice position-relative h-100">
+                        <div class="col-6">
+                            <img class="img-fluid rounded" src="img/18.jpg" alt="">
+                        </div>
+                        <div class="col-6 align-self-end">
+                            <img class="img-fluid rounded" src="img/menu15.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <p class="text-primary text-uppercase mb-2">// About Us</p>
+                        <h1 class="display-6 mb-4">When Passion Meets Perfection, You Get The Best Menu</h1>
+                        <p>At Cafe Vibes, we take pride in using locally sourced ingredients to craft our beverages and dishes, ensuring the freshest flavors in every sip and bite. Our passionate baristas pour their hearts into every cup, creating the perfect blend of aroma and taste that will make your day brighter.</p>
+                        <p>Whether you’re looking for a peaceful corner to unwind, a gathering spot for friends, or a creative space to work and dream, Cafe Vibes is your home away from home. Come for the coffee, stay for the vibes!</p>
+                        <div class="row g-2 mb-4">
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Quality Menu
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Affordable Prices
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Online Order
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Tasty Menu
+                            </div>
+							<a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="about.html">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+    <div class="container-xxl bg-light my-6 py-6 pt-0">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-4">Top Selling In Our Cafe</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">RM12</div>
+                             <h1>Penne alla Vodka Recipe</h1>
+
+    <h2>Ingredients</h2><br>
+    <ul class="recipe-list">
+        <li class="recipe-item">
+            <span class="ingredient-title">Penne Pasta:</span>
+            <span class="ingredient-description">The pasta choice for this dish, often preferred for its ability to catch the sauce.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Olive Oil:</span>
+            <span class="ingredient-description">For sautéing the garlic and shallots to create a flavorful base.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Shallots:</span>
+            <span class="ingredient-description">Adds a mild, sweet flavor to the sauce.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Garlic:</span>
+            <span class="ingredient-description">Adds depth and richness to the sauce.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Tomato Paste:</span>
+            <span class="ingredient-description">Provides the concentrated, rich tomato flavor.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Vodka:</span>
+            <span class="ingredient-description">Adds a unique sharpness and helps to release flavors from the tomato paste.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Heavy Cream:</span>
+            <span class="ingredient-description">Creates a smooth and creamy texture for the sauce.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Parmesan Cheese:</span>
+            <span class="ingredient-description">Adds a nutty, salty flavor to the sauce and helps thicken it.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Red Pepper Flakes:</span>
+            <span class="ingredient-description">Adds a little heat and depth to the sauce.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Fresh Basil:</span>
+            <span class="ingredient-description">For garnish, providing a fresh and aromatic touch.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Salt and Pepper:</span>
+            <span class="ingredient-description">To season the sauce and adjust to taste.</span>
+        </li>
+    </ul>
+
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="img/menu16.jpg" alt="">
+                            <div class="product-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">RM8.9</div>
+                             <h1>Caramel Macchiato Recipe</h1>
+
+    <h2>Ingredients</h2><br>
+    <ul class="recipe-list">
+        <li class="recipe-item">
+            <span class="ingredient-title">Espresso:</span>
+            <span class="ingredient-description">The base of the drink, rich and bold.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Steamed Milk:</span>
+            <span class="ingredient-description">Adds creaminess and smooth texture.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Vanilla Syrup:</span>
+            <span class="ingredient-description">Sweetens the drink with a smooth vanilla flavor.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Caramel Sauce:</span>
+            <span class="ingredient-description">Used for drizzling on top, adding a rich, sweet finish.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Ice:</span>
+            <span class="ingredient-description">For an iced version, this is essential.</span>
+        </li>
+    </ul>
+
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="img/menu20.jpg" alt="">
+                            <div class="product-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">RM8</div>
+                            <h1>Cinnamon Roll Recipe</h1>
+
+    <h2>Ingredients</h2><br>
+    <ul class="recipe-list">
+        <li class="recipe-item">
+            <span class="ingredient-title">Flour:</span>
+            <span class="ingredient-description">The base for the dough, providing structure.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Yeast:</span>
+            <span class="ingredient-description">Helps the dough rise and gives the rolls their airy texture.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Sugar:</span>
+            <span class="ingredient-description">Adds sweetness to the dough and filling.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Salt:</span>
+            <span class="ingredient-description">Enhances the flavor of the dough.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Milk:</span>
+            <span class="ingredient-description">Softens the dough and gives it a rich texture.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Butter:</span>
+            <span class="ingredient-description">Adds richness to the dough and the filling.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Eggs:</span>
+            <span class="ingredient-description">Help bind the dough together and provide structure.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Brown Sugar:</span>
+            <span class="ingredient-description">Used in the filling for sweetness and depth of flavor.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Cinnamon:</span>
+            <span class="ingredient-description">The key spice in the filling, giving it that warm, comforting flavor.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Vanilla Extract:</span>
+            <span class="ingredient-description">Adds depth to the dough and filling.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Cream Cheese:</span>
+            <span class="ingredient-description">For the frosting, providing a rich, tangy flavor.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Powdered Sugar:</span>
+            <span class="ingredient-description">Sweetens the frosting.</span>
+        </li>
+        <li class="recipe-item">
+            <span class="ingredient-title">Milk (for frosting):</span>
+            <span class="ingredient-description">For the frosting, adjusting the consistency.</span>
+        </li>
+    </ul>
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="img/menu13.jpg" alt="">
+                            <div class="product-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<center>
+    <h1>Give Your Feedback</h1><br>
+    <div class="col-md-6 pb-5">
+        <form class="row g-3" action="mailto:msyafiqasnawi@gmail.com" method="post" enctype="text/plain">
+            <div class="col-12">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Your Full Name" required>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+            <div class="col-12">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{10,11}" class="form-control" placeholder="+60" required>
+            </div>
+            <div class="col-12">
+                <label for="message" class="form-label">Comments</label>
+                <textarea class="form-control" name="message" id="message" rows="3" placeholder="Add any special requests or notes"></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
+</center>
+
+
+
+
+
+    <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                                <h4 class="text-light mb-4">Cafe Address</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A1 Plaza, Jalan Ipoh - Kampar, Kampung Batu Karang, 31900 Jeram, Perak</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+0192414850</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>msyafiqasnawi@gmail.com</p>
+				<p class="mb-2"><i class="fa fa-home me-3"></i>Open from: Monday-Saturday</p>
+				<p class="mb-2"><i class="fa fa-clock me-3"></i>10.00 AM - 22.00 PM</p>
+                <div class="d-flex pt-2">
+						<a class="btn-lg-square text-primary border-end rounded-0" href="https://www.facebook.com/share/1FbZdS99tq/" target="_blank" class="text-dark mx-2"><i class="fab fa-facebook-f"</a></i>
+						<a class="btn-lg-square text-primary border-end rounded-0" href="https://x.com/applepiiiiee?s=11" target="_blank" class="text-dark mx-2"><i class="fab fa-twitter"></a></i>
+						<a class="btn-lg-square text-primary pe-0"href="https://www.instagram.com/cafe.vibes10?igsh=Zjd0cHY2MjI2dTh0" target="_blank" class="text-dark mx-2"><i class="fab fa-instagram"></a></i>
+					</div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                <h4 class="text-light mb-4 text-center">Quick Links</h4>
+                <div class="d-flex flex-column gap-2 text-center">
+                    <a href="about.html" class="btn btn-link">About Us</a>
+                    <a href="menu.html" class="btn btn-link">Our Menu</a>
+                    <a href="gallery.html" class="btn btn-link">Our Gallery</a>
+                    <a href="reservation.html" class="btn btn-link">Make Reservation</a>
+                    <a href="contact.html" class="btn btn-link">Contact Us</a>
+                </div>
+            </div>
+			<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                <h4 class="text-light mb-4 text-center">Our Slogan</h4>
+                <div class="d-flex flex-column gap-2 text-center">
+                    <a class="btn btn-link">Brewed To Perfection, Served With Passion</a>
+                    <a class="btn btn-link">A Place For Coffee People</a>
+                    <a class="btn btn-link">Where Every Cup Is A Work Of Art</a>
+                    <a class="btn btn-link">Wake Up And Smell The Coffee Goodness</a>
+                    <a class="btn btn-link">Freshness Is Our Priority</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Photo Gallery</h4>
+                <div class="row g-2 photo-gallery">
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/footer5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light rounded p-1" src="img/menu6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ 
+
+
+    
+
+
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
